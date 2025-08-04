@@ -1,6 +1,7 @@
 services:
   - type: web
-    name: vpnproxy
+    name: vpnproxy1
     env: docker
     plan: free
     autoDeploy: true
+    envVars: []
