@@ -4,5 +4,12 @@ services:
     env: docker
     plan: free
     autoDeploy: true
-    healthCheckPath: "/"  # Убираем проверку HTTP
-    envVars: []
+    rootDir: .
+    dockerfilePath: ./Dockerfile
+    disk:
+      name: cert-disk
+      mountPath: /etc/haproxy/certs
+      sizeGB: 1
+    ports:
+      - port: 443
+        protocol: tcp
