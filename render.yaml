@@ -3,9 +3,5 @@ services:
     name: haproxy-proxy
     env: docker
     plan: free
-    dockerfilePath: ./Dockerfile
     autoDeploy: true
     region: frankfurt
-    envVars:
-      - key: RENDER_SERVICE_NAME
-        value: haproxy-proxy
