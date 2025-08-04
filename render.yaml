@@ -1,6 +1,6 @@
 services:
-  - type: worker
-    name: vpnproxy1
+  - type: web
+    name: vpnproxy
     env: docker
     plan: free
     autoDeploy: true
