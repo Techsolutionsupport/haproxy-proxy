@@ -13,3 +13,5 @@ services:
     ports:
       - port: 443
         protocol: tcp
+    healthCheckPath: "/" # Убираем HTTP check, ставим TCP
+    healthCheckType: tcp
