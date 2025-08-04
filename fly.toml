@@ -1,0 +1,14 @@
+app = "vpn-proxy"
+primary_region = "fra"
+
+[[services]]
+  internal_port = 443
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["tls"]
+    port = 443
+
+  [[services.tcp_checks]]
+    interval = "10s"
+    timeout = "2s"
