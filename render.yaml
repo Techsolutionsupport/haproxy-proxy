@@ -1,9 +1,6 @@
 services:
-  - type: web
-    name: haproxy-proxy
+  - type: worker
+    name: vpnproxy1
     env: docker
     plan: free
     autoDeploy: true
-    envVars:
-      - key: PORT
-        value: 443
