@@ -3,5 +3,8 @@ services:
     name: haproxy-proxy
     env: docker
     plan: free
-    autoDeploy: true
     region: frankfurt
+    dockerfilePath: ./Dockerfile
+    envVars: []
+    healthCheckPath: /
+    autoDeploy: true
