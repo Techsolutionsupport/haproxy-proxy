@@ -6,5 +6,5 @@ services:
     region: frankfurt
     dockerfilePath: ./Dockerfile
     envVars: []
-    healthCheckPath: /
+    healthCheckPath: ""       # отключаем HTTP-проверку
     autoDeploy: true
