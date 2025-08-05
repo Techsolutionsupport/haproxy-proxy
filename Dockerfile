@@ -1,9 +1,8 @@
 FROM haproxy:2.6
 
-# Копируем конфиг HAProxy
+# Копируем конфиги и сертификаты
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+COPY certs/render.pem /etc/ssl/render.pem
 
-# Копируем сертификат из папки certs в контейнер
-COPY certs/render.pem /etc/haproxy/certs/render.pem
-
-CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
+# Запускаем HAProxy + простой HTTP-сервер для health-check
+CMD sh -c "haproxy -f /usr/local/etc/haproxy/haproxy.cfg & python3 -m http.server 10000"
