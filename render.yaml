@@ -3,15 +3,7 @@ services:
     name: vpnproxy1
     env: docker
     plan: free
-    autoDeploy: true
-    rootDir: .
+    healthCheckPath: /
+    envVars: []
     dockerfilePath: ./Dockerfile
-    disk:
-      name: cert-disk
-      mountPath: /etc/haproxy/certs
-      sizeGB: 1
-    ports:
-      - port: 443
-        protocol: tcp
-    healthCheckPath: "/" # Убираем HTTP check, ставим TCP
-    healthCheckType: tcp
+    autoDeploy: true
