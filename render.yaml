@@ -7,4 +7,6 @@ services:
     envVars: []
     healthCheckPath: /
     ports:
-      - port: 443
+      - port: 8080
+        httpHealthCheck:
+          path: /
