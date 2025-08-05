@@ -3,7 +3,10 @@ services:
     name: vpnproxy1
     env: docker
     plan: free
-    healthCheckPath: /
-    envVars: []
     dockerfilePath: ./Dockerfile
-    autoDeploy: true
+    envVars: []
+    healthCheckPath: /
+    ports:
+      - port: 8080
+        httpHealthCheck:
+          path: /
